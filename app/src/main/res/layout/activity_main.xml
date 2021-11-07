@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="87dp"
+        android:contentDescription=" "
+        android:text=" Add Monthly Income"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="#3D477E"
+        android:textSize="34sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/editTextNumberDecimal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Add Income"
+        android:inputType="numberDecimal"
+        android:textAlignment="center"
+        android:textColor="#E91E63"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/textView_date"
+        android:layout_width="match_parent"
+        android:layout_height="51dp"
+        android:layout_marginEnd="16dp"
+        android:hint="Choose Date"
+        android:textAlignment="textStart" />
+
+    <Button
+        android:id="@+id/addExpensesButton"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="#2196F3"
+        android:text="Add expenses"
+        android:textColor="#081514"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/showExpensesButton"
+        android:layout_width="match_parent"
+        android:layout_height="74dp"
+
+        android:backgroundTint="#FFC107"
+        android:text=" Show expenses"
+        android:textColor="#190D0D"
+        android:textSize="20sp" />
+
+    <!--<TextView-->
+    <!--    android:layout_width="wrap_content"-->
+    <!--    android:layout_height="wrap_content"-->
+    <!--    android:text="Hello World!"-->
+    <!--    android:id="@+id/textview"-->
+    <!--    android:textSize="20sp"-->
+    <!--    />-->
+</LinearLayout>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:orientation="vertical"
+tools:context=".add_expenses">
+
+    <TextView
+        android:id="@+id/textview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:lineSpacingExtra="34sp"
+        android:text="Expenses"
+        android:textAlignment="center"
+        android:textSize="34sp" />
+
+    <Button
+        android:id="@+id/regExpenses"
+        android:layout_width="match_parent"
+        android:layout_height="138dp"
+        android:background="#E91E63"
+        android:text="Regular Expenses"
+        android:textSize="24sp" />
+
+    <Button
+        android:id="@+id/irregExpenses"
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+        android:background="#8BC34A"
+        android:text="Irregular expenses"
+        android:textSize="24sp" />
+
+</LinearLayout>
