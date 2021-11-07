@@ -38,6 +38,7 @@ class DatabaseHandler(context: Context): SQLiteOpenHelper(context,DATABASE_NAME,
         onCreate(db)
     }
 
+    // method to add income
     fun addIncome(income: IncomeModelClass):Long{
         val db = this.writableDatabase
         val contentValues = ContentValues()
@@ -52,6 +53,7 @@ class DatabaseHandler(context: Context): SQLiteOpenHelper(context,DATABASE_NAME,
         return success
     }
 
+    // method to add expense
     fun addExpense(expense: ExpensesModelClass):Long{
         val db = this.writableDatabase
         val contentValues = ContentValues()
