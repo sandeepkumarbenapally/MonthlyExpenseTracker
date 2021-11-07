@@ -36,6 +36,6 @@ class add_expenses : AppCompatActivity() {
 
     private fun showAlert1() {
 
-        irregularExpenses().show(supportFragmentManager, "irregularexpenses")
+        IrregularExpenses().show(supportFragmentManager, "irregularexpenses.kt")
     }
 }

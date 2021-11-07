@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="../../Library/Android/sdk/platforms/android-31/data/res/layout/activity_list_item.xml" value="0.17796052631578949" />
         <entry key="app/src/main/res/layout/activity_add_expense.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_add_expenses.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_irregular_expense.xml" value="0.22" />
@@ -12,7 +13,9 @@
         <entry key="app/src/main/res/layout/activity_regular_expenses.xml" value="0.10216218342521537" />
         <entry key="app/src/main/res/layout/activity_regular_expenses2.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_regularexpenses.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_show_expenses.xml" value="0.25" />
         <entry key="app/src/main/res/layout/content_irregular_expenses.xml" value="0.16939890710382513" />
+        <entry key="app/src/main/res/layout/custom_layout.xml" value="0.17796052631578949" />
         <entry key="app/src/main/res/layout/fragment_first.xml" value="0.16939890710382513" />
         <entry key="app/src/main/res/layout/fragment_second.xml" value="0.16939890710382513" />
       </map>

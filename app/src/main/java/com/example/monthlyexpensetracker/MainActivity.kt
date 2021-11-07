@@ -10,6 +10,13 @@ import android.widget.EditText
 import android.widget.TextView
 import java.text.SimpleDateFormat
 import java.util.*
+import android.widget.Toast
+import android.util.Log
+import java.lang.Error
+import android.widget.ListView
+
+
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -26,6 +33,7 @@ class MainActivity : AppCompatActivity() {
 
         val dateSetListener =
             DatePickerDialog.OnDateSetListener { view, year, monthOfYear, dayOfMonth ->
+
                 cal.set(Calendar.YEAR, year)
                 cal.set(Calendar.MONTH, monthOfYear)
                 cal.set(Calendar.DAY_OF_MONTH, dayOfMonth)
@@ -33,8 +41,11 @@ class MainActivity : AppCompatActivity() {
                 val myFormat = "MMM, yyyy" // mention the format you need
                 val sdf = SimpleDateFormat(myFormat, Locale.US)
                 textView.text = sdf.format(cal.time)
-
+                Log.d("sandy", "calling function")
+                addIncome(view, year, monthOfYear + 1);
             }
+
+
 
         textView.setOnClickListener {
             DatePickerDialog(
@@ -43,6 +54,9 @@ class MainActivity : AppCompatActivity() {
                 cal.get(Calendar.MONTH),
                 cal.get(Calendar.DAY_OF_MONTH)
             ).show()
+
+
+
         }
 
 
@@ -53,35 +67,53 @@ class MainActivity : AppCompatActivity() {
             }
         })
 
+        var  _button1 = findViewById<Button>(R.id.showExpensesButton)
+        _button1?.setOnClickListener ( object : View.OnClickListener {
+            override fun onClick(p0: View?) {
+                showExpense();
+            }
+        })
+
+
     }
 
-//    fun saveRecord(view: View){
-//        val id = u_id.text.toString()
-//        val name = u_name.text.toString()
-//        val email = u_email.text.toString()
-//        val `databaseHandler`: `DatabaseHandler`= `DatabaseHandler`(this)
-//        if(id.trim()!="" && name.trim()!="" && email.trim()!=""){
-//            val status = `databaseHandler`.addEmployee(EmpModelClass(Integer.parseInt(id),name, email))
-//            if(status > -1){
-//                Toast.makeText(applicationContext,"record save",Toast.LENGTH_LONG).show()
-//                u_id.text.clear()
-//                u_name.text.clear()
-//                u_email.text.clear()
-//            }
-//        }else{
-//            Toast.makeText(applicationContext,"id or name or email cannot be blank",Toast.LENGTH_LONG).show()
-//        }
-//
-//    }
+    fun addIncome(view: View, year: Int, monthOfYear: Int){
+        var incomeValue = findViewById<EditText>(R.id.editTextNumberDecimal)
+        val textView: TextView = findViewById(R.id.textView_date)
+
+        try {
+            val databaseHandler: DatabaseHandler= DatabaseHandler(this)
+
+            if(incomeValue.text.toString() != "" && monthOfYear != 0 && year != 0){
+                val income = incomeValue.text.toString().toFloat()
+                Log.d("income", income.toString())
+                Log.d("year", year.toString())
+                Log.d("month", monthOfYear.toString())
+                val status = databaseHandler.addIncome(IncomeModelClass(monthOfYear, year, income))
+                if(status > -1){
+                    Toast.makeText(applicationContext,"added income",Toast.LENGTH_LONG).show()
+//                    incomeValue.text.clear()
+//                    textView.text = "Select Month"
+                }
+            }else{
+                Toast.makeText(applicationContext,"date or income cannot be blank",Toast.LENGTH_LONG).show()
+            }
+        } catch (e: Error) {
+            Toast.makeText(applicationContext,"cannot add income ${e.message}",Toast.LENGTH_LONG).show()
+        }
+    }
 
 
     fun addExpense() {
          val intent = Intent(this, add_expenses::class.java)
-// To pass any data to next activity
-       //  intent.putExtra("keyIdentifier", value)
-// start your next activity
 
          print(intent)
          startActivity(intent)
+    }
+
+    fun showExpense() {
+        val intent = Intent(this, show_Expenses::class.java)
+
+        startActivity(intent)
     }
 }

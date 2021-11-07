@@ -10,14 +10,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MonthlyExpenseTracker">
         <activity
-            android:name=".irregular_expense"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:name=".show_Expenses"
+            android:exported="false" />
+        <!-- <activity -->
+        <!-- android:name=".IrregularExpenses" -->
+        <!-- android:exported="true"> -->
+        <!-- <intent-filter> -->
+        <!-- <action android:name="android.intent.action.MAIN" /> -->
+        <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+        <!-- </intent-filter> -->
+        <!-- </activity> -->
         <activity
             android:name=".Irregular_expenses"
             android:exported="true"
