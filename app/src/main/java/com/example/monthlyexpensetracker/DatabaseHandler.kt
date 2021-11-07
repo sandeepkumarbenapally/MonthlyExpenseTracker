@@ -30,6 +30,7 @@ class DatabaseHandler(context: Context): SQLiteOpenHelper(context,DATABASE_NAME,
                 + KEY_ID + " INTEGER PRIMARY KEY," + KEY_MONTH + " TEXT," + KEY_YEAR + " TEXT," + KEY_VALUE + " FLOAT" + ")")
         db?.execSQL(createExpensesTable)
         db?.execSQL(createIncomeTable)
+
     }
 
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
